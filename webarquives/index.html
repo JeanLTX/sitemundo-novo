@@ -32,7 +32,7 @@
 
 <body class="text-gray-900">
 
-  <!-- Cabeçalho -->
+  <!-- Cabeça -->
   <header class="bg-white shadow-md sticky top-0 z-50">
     <div class="container mx-auto px-4 py-4 flex items-center justify-between">
       <h1 class="text-2xl font-bold text-blue-500">Mundo Versátil</h1>
@@ -62,11 +62,24 @@
         <h2 class="text-4xl font-bold mb-4">Bem-vindo à <span class="text-blue-500">Mundo Versátil</span></h2>
         <p class="text-gray-600 text-lg mb-6">Produtos diversos com qualidade, estilo e praticidade para o seu dia a
           dia.</p>
-        <div class="space-x-4">
-          <button class="bg-blue-500 text-white px-6 py-3 rounded hover:bg-blue-600 transition">Ver Produtos</button>
+        <div class="space-x-4 flex">
+          <!-- Ver Produtos (efeito "esvaziar") -->
           <button
-            class="border border-blue-500 text-blue-500 px-6 py-3 rounded hover:bg-blue-500 hover:text-white transition">Ofertas</button>
+            class="relative overflow-hidden px-6 py-3 rounded border border-blue-500 bg-blue-500 text-white transition duration-300 group">
+            <span class="relative z-10 group-hover:text-blue-500 transition-colors duration-300">Ver Produtos</span>
+            <span
+              class="absolute inset-0 bg-white scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
+          </button>
+
+          <!-- Ofertas (efeito "preencher") -->
+          <button
+            class="relative overflow-hidden px-6 py-3 rounded border border-blue-500 bg-transparent text-blue-500 transition duration-300 group">
+            <span class="relative z-10 group-hover:text-white transition-colors duration-300">Ofertas</span>
+            <span
+              class="absolute inset-0 bg-blue-500 scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
+          </button>
         </div>
+
       </div>
       <div class="md:w-1/2">
         <div class="w-full h-64 bg-white rounded-lg shadow-md flex items-center justify-center">
@@ -105,7 +118,7 @@
     </div>
   </section>
 
-  <!-- Catálogo (já atualizado com produtos e carrossel funcional) -->
+  <!-- Catálogo -->
   <section class="py-16 bg-gray-50 relative">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-10">Nosso <span class="text-blue-500">Catálogo</span></h2>
@@ -335,7 +348,7 @@
     </div>
   </section>
 
-  <!-- Rodapé -->
+  <!-- Footer -->
   <footer class="bg-gray-900 pt-12 pb-6 text-white">
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
@@ -411,56 +424,89 @@
     const mobileMenu = document.getElementById("mobile-menu");
     let isOpen = false;
 
-    menuToggle.addEventListener("click", () => {
-      if (!isOpen) {
-        mobileMenu.classList.remove("max-h-0", "opacity-0");
-        mobileMenu.classList.add("max-h-96", "opacity-100");
-      } else {
-        mobileMenu.classList.remove("max-h-96", "opacity-100");
-        mobileMenu.classList.add("max-h-0", "opacity-0");
-      }
-      isOpen = !isOpen;
-    });
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener("click", () => {
+        if (!isOpen) {
+          mobileMenu.classList.remove("max-h-0", "opacity-0");
+          mobileMenu.classList.add("max-h-96", "opacity-100");
+        } else {
+          mobileMenu.classList.remove("max-h-96", "opacity-100");
+          mobileMenu.classList.add("max-h-0", "opacity-0");
+        }
+        isOpen = !isOpen;
+      });
+    }
   </script>
 
   <script>
-    const pages = document.querySelectorAll('.page');
-    let current = 0;
+    document.addEventListener('DOMContentLoaded', () => {
+      const pages = document.querySelectorAll('.page');
+      let current = 0;
 
-    function showPage(index) {
-      pages.forEach((page, i) => {
-        page.style.transition = 'none';
-        if (i === index) {
-          page.classList.remove('hidden');
-          page.style.opacity = '0';
-          page.style.transform = 'translateX(40px)';
-          requestAnimationFrame(() => {
-            page.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            page.style.opacity = '1';
-            page.style.transform = 'translateX(0)';
-          });
-        } else {
-          page.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-          page.style.opacity = '0';
-          page.style.transform = 'translateX(-40px)';
-          setTimeout(() => {
-            page.classList.add('hidden');
-          }, 600);
+      function showPage(index) {
+        pages.forEach((page) => {
+          page.classList.add('hidden');
+        });
+
+        const activePage = pages[index];
+        activePage.classList.remove('hidden');
+        activePage.style.opacity = '0';
+        activePage.style.transform = 'translateX(30px)';
+
+        requestAnimationFrame(() => {
+          activePage.style.transition = 'opacity 1.2s ease, transform 1.2s ease';
+          activePage.style.opacity = '1';
+          activePage.style.transform = 'translateX(0)';
+        });
+      }
+
+      const nextBtn = document.getElementById('next');
+      const prevBtn = document.getElementById('prev');
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          current = (current + 1) % pages.length;
+          showPage(current);
+        });
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          current = (current - 1 + pages.length) % pages.length;
+          showPage(current);
+        });
+      }
+
+      showPage(current);
+
+      // Swipe para dispositivos móveis
+      const carouselWrapper = document.getElementById('carousel');
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      if (carouselWrapper) {
+        carouselWrapper.addEventListener('touchstart', (e) => {
+          touchStartX = e.changedTouches[0].screenX;
+        });
+
+        carouselWrapper.addEventListener('touchend', (e) => {
+          touchEndX = e.changedTouches[0].screenX;
+          handleGesture();
+        });
+      }
+
+      function handleGesture() {
+        const swipeThreshold = 50;
+        if (touchEndX < touchStartX - swipeThreshold) {
+          current = (current + 1) % pages.length;
+          showPage(current);
         }
-      });
-    }
-
-    document.getElementById('next').addEventListener('click', () => {
-      current = (current + 1) % pages.length;
-      showPage(current);
+        if (touchEndX > touchStartX + swipeThreshold) {
+          current = (current - 1 + pages.length) % pages.length;
+          showPage(current);
+        }
+      }
     });
-
-    document.getElementById('prev').addEventListener('click', () => {
-      current = (current - 1 + pages.length) % pages.length;
-      showPage(current);
-    });
-
-    showPage(current);
   </script>
 
 </body>
