@@ -1,0 +1,90 @@
+/* Estilo para botões com preenchimento em onda */
+.btn-wave {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  z-index: 0;
+}
+
+.btn-wave::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: 100%;
+  left: 100%;
+  background-color: currentColor;
+  border-radius: inherit;
+  transition: all 0.4s ease;
+  z-index: 0;
+}
+
+.btn-wave:hover::before {
+  top: -30px;
+  left: -30px;
+}
+
+.btn-wave:active::before {
+  background: #1d4ed8;
+  /* cor ao clicar */
+  transition: background 0s;
+}
+
+.btn-wave span {
+  position: relative;
+  z-index: 10;
+  transition: color 0.3s ease;
+}
+
+.btn-wave:hover span.text-white {
+  color: #1d4ed8;
+}
+
+.btn-wave:hover span.text-blue-500 {
+  color: white;
+}
+
+@keyframes floatIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float-in {
+  animation: floatIn 0.8s ease-out;
+}
+
+@keyframes bounceSlow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounceSlow 2s infinite;
+}
+
+@keyframes pulseSlow {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulseSlow 2.5s infinite;
+}
+
+.product-container {
+  flex-wrap: nowrap;
+}
