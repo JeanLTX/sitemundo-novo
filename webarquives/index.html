@@ -7,6 +7,8 @@
   <title>Mundo Versátil</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.0.0/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+
   <style>
     body {
       font-family: sans-serif;
@@ -63,21 +65,14 @@
         <p class="text-gray-600 text-lg mb-6">Produtos diversos com qualidade, estilo e praticidade para o seu dia a
           dia.</p>
         <div class="space-x-4 flex">
-          <!-- Ver Produtos (efeito "esvaziar") -->
-          <button
-            class="relative overflow-hidden px-6 py-3 rounded border border-blue-500 bg-blue-500 text-white transition duration-300 group">
-            <span class="relative z-10 group-hover:text-blue-500 transition-colors duration-300">Ver Produtos</span>
-            <span
-              class="absolute inset-0 bg-white scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
-          </button>
 
-          <!-- Ofertas (efeito "preencher") -->
-          <button
-            class="relative overflow-hidden px-6 py-3 rounded border border-blue-500 bg-transparent text-blue-500 transition duration-300 group">
-            <span class="relative z-10 group-hover:text-white transition-colors duration-300">Ofertas</span>
-            <span
-              class="absolute inset-0 bg-blue-500 scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
-          </button>
+          <!-- botões hero section -->
+          <button class="botao-hero mr-4"><span>Ver Produtos</span></button>
+          <button class="botao-hero"><span>Ofertas</span></button>
+
+
+
+
         </div>
 
       </div>

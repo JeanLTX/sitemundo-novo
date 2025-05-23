@@ -119,3 +119,47 @@ html,
 body {
   overflow-x: hidden;
 }
+
+.botao-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 12px 28px;
+  border-radius: 9999px;
+  font-weight: 600;
+  color: #007BFF;
+  border: 2px solid #007BFF;
+  background: transparent;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.botao-hero::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 1750%;
+  height: 1750%;
+  background-color: #007BFF;
+  border-radius: 50%;
+  transform: translate(-90%, 90%) scale(1);
+  transform-origin: bottom left;
+  transition: transform 0.5s ease;
+  z-index: 0;
+}
+
+.botao-hero:hover::before {
+  transform: translate(-80%, 80%) scale(1);
+}
+
+
+
+.botao-hero span {
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.botao-hero:hover span {
+  color: white;
+}
