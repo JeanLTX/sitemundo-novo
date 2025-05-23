@@ -34,31 +34,38 @@
 
 <body class="text-gray-900">
 
-  <!-- Cabeçalho -->
+  <!-- Cabeçalho com logo à esquerda e busca centralizada -->
   <header class="bg-white shadow-md sticky top-0 z-50">
     <div class="container mx-auto px-4 py-4 flex items-center justify-between">
 
-      <!-- Logo + Nome -->
+      <!-- Logo e nome da loja à esquerda -->
       <div class="flex items-center space-x-2">
-        <img src="assets/logo-icon.png" alt="Logo Mundo Versátil" class="w-11 h-11">
+        <img src="assets/logo-icon.png" alt="Logo Mundo Versátil" class="w-10 h-10" />
         <h1 class="text-2xl font-bold text-blue-500">Mundo Versátil</h1>
       </div>
 
-      <!-- Menu Mobile -->
-      <button id="menu-toggle" class="md:hidden text-2xl text-gray-700 hover:text-blue-500">
-        <i class="ri-menu-line"></i>
-      </button>
+      <!-- Barra de busca centralizada -->
+      <form class="flex-1 max-w-md mx-10 relative hidden md:block">
+        <input type="text" placeholder="Buscar produtos..."
+          class="w-full py-2 pl-10 pr-4 border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400" />
+        <i class="ri-search-line absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-lg"></i>
+      </form>
 
-      <!-- Navegação Desktop -->
+      <!-- Menu de navegação à direita -->
       <nav class="hidden md:flex space-x-6 text-sm font-medium">
         <a href="#" class="hover:text-blue-500">Início</a>
         <a href="#" class="hover:text-blue-500">Produtos</a>
         <a href="#" class="hover:text-blue-500">Categorias</a>
         <a href="#" class="hover:text-blue-500">Contato</a>
       </nav>
+
+      <!-- Botão de menu mobile -->
+      <button id="menu-toggle" class="md:hidden text-2xl text-gray-700 hover:text-blue-500">
+        <i class="ri-menu-line"></i>
+      </button>
     </div>
 
-    <!-- Navegação Mobile -->
+    <!-- Menu mobile -->
     <div id="mobile-menu"
       class="overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out md:hidden px-4">
       <a href="#" class="block py-2 text-sm text-gray-700 hover:text-blue-500">Início</a>
@@ -67,6 +74,7 @@
       <a href="#" class="block py-2 text-sm text-gray-700 hover:text-blue-500">Contato</a>
     </div>
   </header>
+
 
 
   <!-- Hero Section -->
