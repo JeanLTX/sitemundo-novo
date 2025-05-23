@@ -49,6 +49,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -60,9 +61,12 @@
 }
 
 @keyframes bounceSlow {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-4px);
   }
@@ -73,9 +77,12 @@
 }
 
 @keyframes pulseSlow {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.08);
   }
@@ -87,4 +94,28 @@
 
 .product-container {
   flex-wrap: nowrap;
+}
+
+/* Corrige largura dos cards para 4 por slide */
+.carousel-item {
+  flex: 0 0 25%;
+  max-width: 25%;
+  box-sizing: border-box;
+  padding-right: 1rem;
+}
+
+/* Remove barras de rolagem */
+#carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+#carousel-track {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Impede que o container cause scroll */
+html,
+body {
+  overflow-x: hidden;
 }
