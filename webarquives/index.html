@@ -34,13 +34,22 @@
 
 <body class="text-gray-900">
 
-  <!-- Cabeça -->
+  <!-- Cabeçalho -->
   <header class="bg-white shadow-md sticky top-0 z-50">
     <div class="container mx-auto px-4 py-4 flex items-center justify-between">
-      <h1 class="text-2xl font-bold text-blue-500">Mundo Versátil</h1>
+
+      <!-- Logo + Nome -->
+      <div class="flex items-center space-x-2">
+        <img src="assets/logo-icon.png" alt="Logo Mundo Versátil" class="w-11 h-11">
+        <h1 class="text-2xl font-bold text-blue-500">Mundo Versátil</h1>
+      </div>
+
+      <!-- Menu Mobile -->
       <button id="menu-toggle" class="md:hidden text-2xl text-gray-700 hover:text-blue-500">
         <i class="ri-menu-line"></i>
       </button>
+
+      <!-- Navegação Desktop -->
       <nav class="hidden md:flex space-x-6 text-sm font-medium">
         <a href="#" class="hover:text-blue-500">Início</a>
         <a href="#" class="hover:text-blue-500">Produtos</a>
@@ -48,6 +57,8 @@
         <a href="#" class="hover:text-blue-500">Contato</a>
       </nav>
     </div>
+
+    <!-- Navegação Mobile -->
     <div id="mobile-menu"
       class="overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out md:hidden px-4">
       <a href="#" class="block py-2 text-sm text-gray-700 hover:text-blue-500">Início</a>
@@ -56,6 +67,7 @@
       <a href="#" class="block py-2 text-sm text-gray-700 hover:text-blue-500">Contato</a>
     </div>
   </header>
+
 
   <!-- Hero Section -->
   <section class="bg-gradient-to-r from-blue-100 to-blue-50 py-16">
@@ -84,34 +96,58 @@
     </div>
   </section>
 
-  <!-- Categorias em Destaque -->
+  <!-- Categ destaque -->
   <section class="py-16 bg-white">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-10">Categorias em <span class="text-blue-500">Destaque</span></h2>
+      <h2 class="text-3xl font-bold text-center mb-10">
+        Categorias em <span class="text-blue-500">Destaque</span>
+      </h2>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-        <div class="text-center bg-blue-50 p-6 rounded-lg hover:shadow-md transition">
-          <i class="ri-t-shirt-line text-3xl text-blue-500 mb-2"></i>
+
+        <!-- Camping -->
+        <div
+          class="text-center bg-blue-50 p-6 rounded-lg hover:shadow-md transition flex flex-col items-center justify-start">
+          <div class="w-12 h-12 flex items-center justify-center mb-2">
+            <img src="assets/campingicon.png" alt="Ícone de Camping" class="w-full h-full object-contain" />
+          </div>
           <h3 class="font-medium text-lg">Camping</h3>
           <p class="text-gray-500 text-sm">Barracas e Colchões</p>
         </div>
-        <div class="text-center bg-blue-50 p-6 rounded-lg hover:shadow-md transition">
-          <i class="ri-smartphone-line text-3xl text-blue-500 mb-2"></i>
+
+        <!-- Lazer -->
+        <div
+          class="text-center bg-blue-50 p-6 rounded-lg hover:shadow-md transition flex flex-col items-center justify-start">
+          <div class="w-12 h-12 flex items-center justify-center mb-2">
+            <i class="ri-sun-line text-blue-500 text-3xl"></i>
+          </div>
           <h3 class="font-medium text-lg">Lazer</h3>
           <p class="text-gray-500 text-sm">Piscinas e Coolers</p>
         </div>
-        <div class="text-center bg-blue-50 p-6 rounded-lg hover:shadow-md transition">
-          <i class="ri-home-line text-3xl text-blue-500 mb-2"></i>
+
+        <!-- Casa -->
+        <div
+          class="text-center bg-blue-50 p-6 rounded-lg hover:shadow-md transition flex flex-col items-center justify-start">
+          <div class="w-12 h-12 flex items-center justify-center mb-2">
+            <i class="ri-home-line text-blue-500 text-3xl"></i>
+          </div>
           <h3 class="font-medium text-lg">Casa</h3>
           <p class="text-gray-500 text-sm">Utilidades & Decoração</p>
         </div>
-        <div class="text-center bg-blue-50 p-6 rounded-lg hover:shadow-md transition">
-          <i class="ri-gamepad-line text-3xl text-blue-500 mb-2"></i>
+
+        <!-- Brinquedos -->
+        <div
+          class="text-center bg-blue-50 p-6 rounded-lg hover:shadow-md transition flex flex-col items-center justify-start">
+          <div class="w-12 h-12 flex items-center justify-center mb-2">
+            <i class="ri-gamepad-line text-blue-500 text-3xl"></i>
+          </div>
           <h3 class="font-medium text-lg">Brinquedos</h3>
           <p class="text-gray-500 text-sm">Diversão e Entretenimento</p>
         </div>
+
       </div>
     </div>
   </section>
+
 
   <!-- Catálogo -->
   <section class="py-16 bg-gray-50 relative">
