@@ -35,127 +35,122 @@
 <body class="text-gray-900">
 
   <!-- Cabeça -->
-  <header class="bg-white shadow-md sticky top-0 z-50">
-    <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+  <header style="background-color: #191e2b" class="shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between relative">
 
       <!-- Logo e nome -->
       <div class="flex items-center space-x-2">
         <img src="assets/logo-icon.png" alt="Logo Mundo Versátil" class="w-12 h-12" />
-        <h1 class="text-2xl font-bold text-blue-500">Mundo Versátil</h1>
+        <h1 class="text-2xl font-bold" style="color: #00c6e6">Mundo Versátil</h1>
       </div>
 
       <!-- Barra de pesquisa -->
-      <form class="relative w-72 md:w-80 lg:w-96 hidden md:block">
-        <input type="text" id="search" name="search"
-          class="peer w-full pl-10 pr-4 pt-5 pb-2 rounded-full border border-blue-300 backdrop-blur-md bg-white/90 text-gray-900 placeholder-transparent focus:outline-none focus:border-blue-700 transition-all duration-300 shadow-md"
-          placeholder="Buscar produtos" />
-
-        <div class="absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-500">
-          <i class="ri-search-line text-xl"></i>
-        </div>
-
-        <label for="search"
-          class="absolute left-10 top-2 text-gray-500 text-sm transition-all duration-200 peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-600">
-          Buscar produtos
-        </label>
-      </form>
+      <div class="absolute left-1/2 transform -translate-x-1/2 hidden md:block">
+        <form class="relative w-72 md:w-80 lg:w-96">
+          <input type="text" id="search" name="search"
+            class="peer w-full pl-10 pr-4 pt-5 pb-2 rounded-full border border-blue-500 text-gray-900 placeholder-transparent focus:outline-none focus:border-blue-700 transition-all duration-200"
+            placeholder="Buscar produtos" />
+          <div class="absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-500">
+            <i class="ri-search-line text-xl"></i>
+          </div>
+          <label for="search"
+            class="absolute left-10 top-2 text-gray-500 text-sm transition-all duration-200 peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-0.5 peer-focus:text-sm peer-focus:text-blue-600">
+            Buscar produtos
+          </label>
+        </form>
+      </div>
 
 
       <!-- Menu navegação -->
       <button id="menu-toggle" class="md:hidden text-2xl text-gray-700 hover:text-blue-500">
         <i class="ri-menu-line"></i>
       </button>
-      <nav class="hidden md:flex space-x-6 text-sm font-medium">
-        <a href="#" class="hover:text-blue-500">Início</a>
-        <a href="#" class="hover:text-blue-500">Produtos</a>
-        <a href="#" class="hover:text-blue-500">Categorias</a>
-        <a href="#" class="hover:text-blue-500">Contato</a>
+      <nav class="hidden md:flex text-sm font-medium">
+        <a href="#" class="link-menu">Início</a>
+        <a href="#" class="link-menu">Produtos</a>
+        <a href="#" class="link-menu">Categorias</a>
+        <a href="#" class="link-menu">Contato</a>
       </nav>
+
     </div>
 
     <!-- Menu Mobile -->
     <div id="mobile-menu"
       class="overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out md:hidden px-4">
-      <a href="#" class="block py-2 text-sm text-gray-700 hover:text-blue-500">Início</a>
-      <a href="#" class="block py-2 text-sm text-gray-700 hover:text-blue-500">Produtos</a>
-      <a href="#" class="block py-2 text-sm text-gray-700 hover:text-blue-500">Categorias</a>
-      <a href="#" class="block py-2 text-sm text-gray-700 hover:text-blue-500">Contato</a>
+      <a href="#" class="block py-2 text-sm link-menu">Início</a>
+      <a href="#" class="block py-2 text-sm link-menu">Produtos</a>
+      <a href="#" class="block py-2 text-sm link-menu">Categorias</a>
+      <a href="#" class="block py-2 text-sm link-menu">Contato</a>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="bg-gradient-to-r from-blue-100 to-blue-50 py-16">
-    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
-      <div class="md:w-1/2 mb-10 md:mb-0">
-        <h2 class="text-4xl font-bold mb-4">Bem-vindo à <span class="text-blue-500">Mundo Versátil</span></h2>
-        <p class="text-gray-600 text-lg mb-6">Produtos diversos com qualidade, estilo e praticidade para o seu dia a
-          dia.</p>
-        <div class="space-x-4 flex">
+  <section class="hero-banner relative py-60 text-white">
+    <!-- Camada escura opcional -->
+    <div class="absolute inset-0 bg-black bg-opacity-40 z-0"></div>
 
-          <!-- botões hero section -->
-          <button class="botao-hero mr-4"><span>Ver Produtos</span></button>
-          <button class="botao-hero"><span>Ofertas</span></button>
-
-
-
-
-        </div>
-
-      </div>
-      <div class="md:w-1/2">
-        <div class="w-full h-64 bg-white rounded-lg shadow-md flex items-center justify-center">
-          <span class="text-gray-400">[imagem futura]</span>
-        </div>
+    <!-- Conteúdo -->
+    <div class="container mx-auto px-4 flex flex-col items-start text-left relative z-10">
+      <h2 class="text-4xl font-bold mb-4">
+        Bem-vindo à <span class="text-[#00c6e6]">Mundo Versátil</span>
+      </h2>
+      <p class="text-gray-200 text-lg mb-6">
+        Produtos diversos com qualidade, estilo e praticidade para o seu dia a dia.
+      </p>
+      <div class="space-x-4 flex flex-wrap justify-center">
+        <button class="botao-hero mr-4"><span>Ver Produtos</span></button>
+        <button class="botao-hero"><span>Ofertas</span></button>
       </div>
     </div>
   </section>
 
-  <!-- Categ destaque -->
-  <section class="py-16 bg-white">
+  <!-- Categorias em Destaque -->
+  <section class="py-16 bg-[#f5f6fa]">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-10">
-        Categorias em <span class="text-blue-500">Destaque</span>
+      <h2 class="text-3xl font-bold text-center mb-10 text-[#191e2b]">
+        Categorias em <span class="text-[#00c6e6]">Destaque</span>
       </h2>
+
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
 
         <!-- Camping -->
         <div
-          class="text-center bg-blue-50 p-6 rounded-lg hover:shadow-md transition flex flex-col items-center justify-start">
-          <div class="w-12 h-12 flex items-center justify-center mb-2">
-            <img src="assets/campingicon.png" alt="Ícone de Camping" class="w-full h-full object-contain" />
+          class="text-center bg-white border border-[#e0e2e8] p-6 rounded-lg hover:shadow-md transition flex flex-col items-center justify-start">
+          <div class="w-12 h-15 flex items-center justify-center mb-2">
+            <img src="assets/campingicon-cyan.png" alt="Ícone de Camping" class="w-full h-full object-contain" />
           </div>
-          <h3 class="font-medium text-lg">Camping</h3>
-          <p class="text-gray-500 text-sm">Barracas e Colchões</p>
+          <h3 class="font-medium text-lg text-[#191e2b]">Camping</h3>
+          <p class="text-[#253045] text-sm">Barracas e Colchões</p>
         </div>
 
         <!-- Lazer -->
         <div
-          class="text-center bg-blue-50 p-6 rounded-lg hover:shadow-md transition flex flex-col items-center justify-start">
+          class="text-center bg-white border border-[#e0e2e8] p-6 rounded-lg hover:shadow-md transition flex flex-col items-center justify-start">
           <div class="w-12 h-12 flex items-center justify-center mb-2">
-            <i class="ri-sun-line text-blue-500 text-3xl"></i>
+            <i class="ri-sun-line text-[#00c6e6] text-3xl"></i>
           </div>
-          <h3 class="font-medium text-lg">Lazer</h3>
-          <p class="text-gray-500 text-sm">Piscinas e Coolers</p>
+          <h3 class="font-medium text-lg text-[#191e2b]">Lazer</h3>
+          <p class="text-[#253045] text-sm">Piscinas e Coolers</p>
         </div>
 
         <!-- Casa -->
         <div
-          class="text-center bg-blue-50 p-6 rounded-lg hover:shadow-md transition flex flex-col items-center justify-start">
+          class="text-center bg-white border border-[#e0e2e8] p-6 rounded-lg hover:shadow-md transition flex flex-col items-center justify-start">
           <div class="w-12 h-12 flex items-center justify-center mb-2">
-            <i class="ri-home-line text-blue-500 text-3xl"></i>
+            <i class="ri-home-line text-[#00c6e6] text-3xl"></i>
           </div>
-          <h3 class="font-medium text-lg">Casa</h3>
-          <p class="text-gray-500 text-sm">Utilidades & Decoração</p>
+          <h3 class="font-medium text-lg text-[#191e2b]">Casa</h3>
+          <p class="text-[#253045] text-sm">Utilidades & Decoração</p>
         </div>
 
         <!-- Brinquedos -->
         <div
-          class="text-center bg-blue-50 p-6 rounded-lg hover:shadow-md transition flex flex-col items-center justify-start">
+          class="text-center bg-white border border-[#e0e2e8] p-6 rounded-lg hover:shadow-md transition flex flex-col items-center justify-start">
           <div class="w-12 h-12 flex items-center justify-center mb-2">
-            <i class="ri-gamepad-line text-blue-500 text-3xl"></i>
+            <i class="ri-gamepad-line text-[#00c6e6] text-3xl"></i>
           </div>
-          <h3 class="font-medium text-lg">Brinquedos</h3>
-          <p class="text-gray-500 text-sm">Diversão e Entretenimento</p>
+          <h3 class="font-medium text-lg text-[#191e2b]">Brinquedos</h3>
+          <p class="text-[#253045] text-sm">Diversão e Entretenimento</p>
         </div>
 
       </div>
@@ -164,32 +159,37 @@
 
 
   <!-- Catálogo -->
-  <section class="py-16 bg-gray-50 relative">
+  <section class="py-16 bg-[#f0f1f5] relative">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-10">Nosso <span class="text-blue-500">Catálogo</span></h2>
+      <h2 class="text-3xl font-bold text-center mb-10 text-[#191e2b]">
+        Nosso <span class="text-[#00c6e6]">Catálogo</span>
+      </h2>
+
       <div class="relative px-6">
         <!-- Botão Anterior -->
         <button id="prev"
-          class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-blue-100 text-black w-10 h-10 rounded-full shadow-md flex items-center justify-center">
-          <i class="ri-arrow-left-s-line text-xl"></i>
+          class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-[#e0f7fb] text-black w-10 h-10 rounded-full shadow-md flex items-center justify-center">
+          <i class="ri-arrow-left-s-line text-[#00c6e6] text-xl"></i>
         </button>
 
         <!-- Área de visualização -->
         <div class="overflow-hidden relative h-[420px]">
           <div id="carousel" class="product-container absolute w-full h-full transition-all duration-500 ease-in-out">
+
             <!-- Página 1 -->
             <div class="flex w-full gap-4 page">
+
               <!-- Produto 1 -->
               <div class="product-card w-1/4 bg-white rounded-lg shadow-md p-4 flex flex-col">
                 <div class="w-full h-48 bg-gray-200 rounded mb-4 overflow-hidden group">
                   <img src="assets/acampando-sob-a-luz-da-lua.png" alt="Barraca Camping"
                     class="h-full w-auto object-contain mx-auto group-hover:scale-105 transition-transform duration-300" />
                 </div>
-                <h3 class="text-lg font-semibold mb-1">Barraca Camping</h3>
-                <p class="text-blue-500 font-bold text-xl">R$ 379,00</p>
-                <p class="text-sm text-gray-500 mb-4">Em estoque</p>
+                <h3 class="text-lg font-semibold mb-1 text-[#191e2b]">Barraca Camping</h3>
+                <p class="text-[#00c6e6] font-bold text-xl">R$ 379,00</p>
+                <p class="text-sm text-[#253045] mb-4">Em estoque</p>
                 <button
-                  class="mt-auto bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition">Comprar</button>
+                  class="mt-auto bg-[#00c6e6] text-white py-2 rounded hover:bg-[#191e2b] transition">Comprar</button>
               </div>
 
               <!-- Produto 2 -->
@@ -198,11 +198,11 @@
                   <img src="assets/Bicicleta-Infantil-no-Parque.png" alt="Bicicleta Infantil"
                     class="h-full w-auto object-contain mx-auto group-hover:scale-105 transition-transform duration-300" />
                 </div>
-                <h3 class="text-lg font-semibold mb-1">Bicicleta Infantil</h3>
-                <p class="text-blue-500 font-bold text-xl">R$ 289,00</p>
-                <p class="text-sm text-gray-500 mb-4">Disponível</p>
+                <h3 class="text-lg font-semibold mb-1 text-[#191e2b]">Bicicleta Infantil</h3>
+                <p class="text-[#00c6e6] font-bold text-xl">R$ 289,00</p>
+                <p class="text-sm text-[#253045] mb-4">Disponível</p>
                 <button
-                  class="mt-auto bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition">Comprar</button>
+                  class="mt-auto bg-[#00c6e6] text-white py-2 rounded hover:bg-[#191e2b] transition">Comprar</button>
               </div>
 
               <!-- Produto 3 -->
@@ -211,11 +211,11 @@
                   <img src="assets/produto3.png" alt="Relógio Digital"
                     class="h-full w-auto object-contain mx-auto group-hover:scale-105 transition-transform duration-300" />
                 </div>
-                <h3 class="text-lg font-semibold mb-1">Relógio Digital</h3>
-                <p class="text-blue-500 font-bold text-xl">R$ 149,90</p>
-                <p class="text-sm text-gray-500 mb-4">Últimas unidades</p>
+                <h3 class="text-lg font-semibold mb-1 text-[#191e2b]">Relógio Digital</h3>
+                <p class="text-[#00c6e6] font-bold text-xl">R$ 149,90</p>
+                <p class="text-sm text-[#253045] mb-4">Últimas unidades</p>
                 <button
-                  class="mt-auto bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition">Comprar</button>
+                  class="mt-auto bg-[#00c6e6] text-white py-2 rounded hover:bg-[#191e2b] transition">Comprar</button>
               </div>
 
               <!-- Produto 4 -->
@@ -224,27 +224,29 @@
                   <img src="assets/produto4.png" alt="Fone Bluetooth"
                     class="h-full w-auto object-contain mx-auto group-hover:scale-105 transition-transform duration-300" />
                 </div>
-                <h3 class="text-lg font-semibold mb-1">Fone Bluetooth</h3>
-                <p class="text-blue-500 font-bold text-xl">R$ 99,00</p>
-                <p class="text-sm text-gray-500 mb-4">Em estoque</p>
+                <h3 class="text-lg font-semibold mb-1 text-[#191e2b]">Fone Bluetooth</h3>
+                <p class="text-[#00c6e6] font-bold text-xl">R$ 99,00</p>
+                <p class="text-sm text-[#253045] mb-4">Em estoque</p>
                 <button
-                  class="mt-auto bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition">Comprar</button>
+                  class="mt-auto bg-[#00c6e6] text-white py-2 rounded hover:bg-[#191e2b] transition">Comprar</button>
               </div>
+
             </div>
 
             <!-- Página 2 -->
             <div class="flex w-full gap-4 page hidden opacity-0 translate-x-10 transition-all duration-500">
+
               <!-- Produto 5 -->
               <div class="product-card w-1/4 bg-white rounded-lg shadow-md p-4 flex flex-col">
                 <div class="w-full h-48 bg-gray-200 rounded mb-4 overflow-hidden group">
                   <img src="assets/produto5.png" alt="Cadeira Dobrável"
                     class="h-full w-auto object-contain mx-auto group-hover:scale-105 transition-transform duration-300" />
                 </div>
-                <h3 class="text-lg font-semibold mb-1">Cadeira Dobrável</h3>
-                <p class="text-blue-500 font-bold text-xl">R$ 139,00</p>
-                <p class="text-sm text-gray-500 mb-4">Em estoque</p>
+                <h3 class="text-lg font-semibold mb-1 text-[#191e2b]">Cadeira Dobrável</h3>
+                <p class="text-[#00c6e6] font-bold text-xl">R$ 139,00</p>
+                <p class="text-sm text-[#253045] mb-4">Em estoque</p>
                 <button
-                  class="mt-auto bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition">Comprar</button>
+                  class="mt-auto bg-[#00c6e6] text-white py-2 rounded hover:bg-[#191e2b] transition">Comprar</button>
               </div>
 
               <!-- Produto 6 -->
@@ -253,11 +255,11 @@
                   <img src="assets/produto6.png" alt="Patinete Infantil"
                     class="h-full w-auto object-contain mx-auto group-hover:scale-105 transition-transform duration-300" />
                 </div>
-                <h3 class="text-lg font-semibold mb-1">Patinete Infantil</h3>
-                <p class="text-blue-500 font-bold text-xl">R$ 219,00</p>
-                <p class="text-sm text-gray-500 mb-4">Em estoque</p>
+                <h3 class="text-lg font-semibold mb-1 text-[#191e2b]">Patinete Infantil</h3>
+                <p class="text-[#00c6e6] font-bold text-xl">R$ 219,00</p>
+                <p class="text-sm text-[#253045] mb-4">Em estoque</p>
                 <button
-                  class="mt-auto bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition">Comprar</button>
+                  class="mt-auto bg-[#00c6e6] text-white py-2 rounded hover:bg-[#191e2b] transition">Comprar</button>
               </div>
 
               <!-- Produto 7 -->
@@ -266,11 +268,11 @@
                   <img src="assets/produto7.png" alt="Capacete Infantil"
                     class="h-full w-auto object-contain mx-auto group-hover:scale-105 transition-transform duration-300" />
                 </div>
-                <h3 class="text-lg font-semibold mb-1">Capacete Infantil</h3>
-                <p class="text-blue-500 font-bold text-xl">R$ 59,90</p>
-                <p class="text-sm text-gray-500 mb-4">Disponível</p>
+                <h3 class="text-lg font-semibold mb-1 text-[#191e2b]">Capacete Infantil</h3>
+                <p class="text-[#00c6e6] font-bold text-xl">R$ 59,90</p>
+                <p class="text-sm text-[#253045] mb-4">Disponível</p>
                 <button
-                  class="mt-auto bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition">Comprar</button>
+                  class="mt-auto bg-[#00c6e6] text-white py-2 rounded hover:bg-[#191e2b] transition">Comprar</button>
               </div>
 
               <!-- Produto 8 -->
@@ -279,20 +281,22 @@
                   <img src="assets/produto8.png" alt="Kit Acessórios Bike"
                     class="h-full w-auto object-contain mx-auto group-hover:scale-105 transition-transform duration-300" />
                 </div>
-                <h3 class="text-lg font-semibold mb-1">Kit Acessórios Bike</h3>
-                <p class="text-blue-500 font-bold text-xl">R$ 89,90</p>
-                <p class="text-sm text-gray-500 mb-4">Restam poucos</p>
+                <h3 class="text-lg font-semibold mb-1 text-[#191e2b]">Kit Acessórios Bike</h3>
+                <p class="text-[#00c6e6] font-bold text-xl">R$ 89,90</p>
+                <p class="text-sm text-[#253045] mb-4">Restam poucos</p>
                 <button
-                  class="mt-auto bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition">Comprar</button>
+                  class="mt-auto bg-[#00c6e6] text-white py-2 rounded hover:bg-[#191e2b] transition">Comprar</button>
               </div>
+
             </div>
+
           </div>
         </div>
 
         <!-- Botão Próximo -->
         <button id="next"
-          class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-blue-100 text-black w-10 h-10 rounded-full shadow-md flex items-center justify-center">
-          <i class="ri-arrow-right-s-line text-xl"></i>
+          class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-[#e0f7fb] text-black w-10 h-10 rounded-full shadow-md flex items-center justify-center">
+          <i class="ri-arrow-right-s-line text-[#00c6e6] text-xl"></i>
         </button>
       </div>
     </div>
@@ -300,95 +304,119 @@
 
 
   <!-- Ofertas Especiais -->
-  <section class="py-16 bg-white">
+  <section class="py-16 bg-[#f0f1f5]">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-10">Ofertas <span class="text-blue-500">Especiais</span></h2>
+      <h2 class="text-3xl font-bold text-center mb-10 text-[#191e2b]">
+        Ofertas <span class="text-[#00c6e6]">Especiais</span>
+      </h2>
+
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
         <!-- Oferta 1: Barraca -->
-        <div class="flex flex-col md:flex-row bg-blue-50 rounded-lg overflow-hidden shadow-md">
+        <div class="flex flex-col md:flex-row bg-white rounded-lg overflow-hidden shadow-md">
           <div class="md:w-2/5 h-64">
             <img src="assets/acampando-sob-a-luz-da-lua.png" alt="Barraca para Camping"
               class="w-full h-full object-cover" />
           </div>
           <div class="md:w-3/5 p-6 flex flex-col justify-center">
-            <span class="bg-blue-100 text-blue-600 text-xs font-semibold px-3 py-1 rounded-full mb-2 w-max">Super
-              Oferta</span>
-            <h3 class="text-2xl font-bold mb-2">Barraca Camping 4 Pessoas</h3>
-            <p class="text-gray-600 mb-4">Ideal para aventuras ao ar livre, com isolamento térmico e espaço confortável.
+            <span class="bg-[#00c6e6]/10 text-[#00c6e6] text-xs font-semibold px-3 py-1 rounded-full mb-2 w-max">
+              Super Oferta
+            </span>
+            <h3 class="text-2xl font-bold mb-2 text-[#191e2b]">Barraca Camping 4 Pessoas</h3>
+            <p class="text-[#253045] mb-4">
+              Ideal para aventuras ao ar livre, com isolamento térmico e espaço confortável.
             </p>
             <div class="flex items-center mb-4">
               <span class="text-gray-400 line-through mr-2">R$ 499,00</span>
-              <span class="text-blue-500 font-bold text-xl">R$ 379,00</span>
+              <span class="text-[#00c6e6] font-bold text-xl">R$ 379,00</span>
             </div>
             <div class="flex space-x-3">
-              <button class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 transition">Comprar
-                Agora</button>
+              <button class="bg-[#00c6e6] text-white px-6 py-2 rounded hover:bg-[#191e2b] transition">
+                Comprar Agora
+              </button>
               <button
-                class="border border-blue-500 text-blue-500 px-6 py-2 rounded hover:bg-blue-500 hover:text-white transition">Ver
-                Detalhes</button>
+                class="border border-[#00c6e6] text-[#00c6e6] px-6 py-2 rounded hover:bg-[#00c6e6] hover:text-white transition">
+                Ver Detalhes
+              </button>
             </div>
           </div>
         </div>
 
         <!-- Oferta 2: Bicicleta -->
-        <div class="flex flex-col md:flex-row bg-blue-50 rounded-lg overflow-hidden shadow-md">
+        <div class="flex flex-col md:flex-row bg-white rounded-lg overflow-hidden shadow-md">
           <div class="md:w-2/5 h-64">
             <img src="assets/Bicicleta-Infantil-no-Parque.png" alt="Bicicleta Infantil Rosa"
               class="w-full h-full object-cover" />
           </div>
           <div class="md:w-3/5 p-6 flex flex-col justify-center">
-            <span
-              class="bg-green-100 text-green-600 text-xs font-semibold px-3 py-1 rounded-full mb-2 w-max">Novo</span>
-            <h3 class="text-2xl font-bold mb-2">Bicicleta Infantil Ultra Rosa</h3>
-            <p class="text-gray-600 mb-4">Segura, divertida e colorida. Ideal para os primeiros pedais das crianças!</p>
+            <span class="bg-green-100 text-green-600 text-xs font-semibold px-3 py-1 rounded-full mb-2 w-max">
+              Novo
+            </span>
+            <h3 class="text-2xl font-bold mb-2 text-[#191e2b]">Bicicleta Infantil Ultra Rosa</h3>
+            <p class="text-[#253045] mb-4">
+              Segura, divertida e colorida. Ideal para os primeiros pedais das crianças!
+            </p>
             <div class="flex items-center mb-4">
-              <span class="text-blue-500 font-bold text-xl">R$ 289,00</span>
+              <span class="text-[#00c6e6] font-bold text-xl">R$ 289,00</span>
             </div>
             <div class="flex space-x-3">
-              <button class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 transition">Comprar
-                Agora</button>
+              <button class="bg-[#00c6e6] text-white px-6 py-2 rounded hover:bg-[#253045] transition">
+                Comprar Agora
+              </button>
               <button
-                class="border border-blue-500 text-blue-500 px-6 py-2 rounded hover:bg-blue-500 hover:text-white transition">Ver
-                Detalhes</button>
+                class="border border-[#00c6e6] text-[#00c6e6] px-6 py-2 rounded hover:bg-[#00c6e6] hover:text-white transition">
+                Ver Detalhes
+              </button>
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
+
   <!-- Benefícios -->
-  <section class="py-12 bg-gray-100">
+  <section class="py-12 bg-[#f0f1f5]">
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+
+        <!-- Benefício 1 -->
         <div class="bg-white rounded-lg p-6 text-center shadow hover:shadow-lg transition">
-          <div class="text-blue-500 text-3xl mb-2">
+          <div class="text-[#00c6e6] text-3xl mb-2">
             <i class="ri-truck-line"></i>
           </div>
-          <h3 class="text-lg font-semibold mb-2">Entrega Rápida</h3>
-          <p class="text-gray-600 text-sm">Entregamos em todo o Brasil em até 7 dias úteis</p>
+          <h3 class="text-lg font-semibold mb-2 text-[#191e2b]">Entrega Rápida</h3>
+          <p class="text-sm text-[#253045]">Entregamos em todo o Brasil em até 7 dias úteis</p>
         </div>
+
+        <!-- Benefício 2 -->
         <div class="bg-white rounded-lg p-6 text-center shadow hover:shadow-lg transition">
-          <div class="text-blue-500 text-3xl mb-2">
+          <div class="text-[#00c6e6] text-3xl mb-2">
             <i class="ri-secure-payment-line"></i>
           </div>
-          <h3 class="text-lg font-semibold mb-2">Pagamento Seguro</h3>
-          <p class="text-gray-600 text-sm">Diversas formas de pagamento com total segurança</p>
+          <h3 class="text-lg font-semibold mb-2 text-[#191e2b]">Pagamento Seguro</h3>
+          <p class="text-sm text-[#253045]">Diversas formas de pagamento com total segurança</p>
         </div>
+
+        <!-- Benefício 3 -->
         <div class="bg-white rounded-lg p-6 text-center shadow hover:shadow-lg transition">
-          <div class="text-blue-500 text-3xl mb-2">
+          <div class="text-[#00c6e6] text-3xl mb-2">
             <i class="ri-exchange-line"></i>
           </div>
-          <h3 class="text-lg font-semibold mb-2">Troca Garantida</h3>
-          <p class="text-gray-600 text-sm">Até 30 dias para trocar ou devolver seu produto</p>
+          <h3 class="text-lg font-semibold mb-2 text-[#191e2b]">Troca Garantida</h3>
+          <p class="text-sm text-[#253045]">Até 30 dias para trocar ou devolver seu produto</p>
         </div>
+
+        <!-- Benefício 4 -->
         <div class="bg-white rounded-lg p-6 text-center shadow hover:shadow-lg transition">
-          <div class="text-blue-500 text-3xl mb-2">
+          <div class="text-[#00c6e6] text-3xl mb-2">
             <i class="ri-customer-service-2-line"></i>
           </div>
-          <h3 class="text-lg font-semibold mb-2">Suporte 24/7</h3>
-          <p class="text-gray-600 text-sm">Atendimento ao cliente disponível a qualquer hora</p>
+          <h3 class="text-lg font-semibold mb-2 text-[#191e2b]">Suporte 24/7</h3>
+          <p class="text-sm text-[#253045]">Atendimento ao cliente disponível a qualquer hora</p>
         </div>
+
       </div>
     </div>
   </section>

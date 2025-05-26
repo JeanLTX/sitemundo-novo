@@ -126,8 +126,8 @@ body {
   padding: 12px 28px;
   border-radius: 9999px;
   font-weight: 600;
-  color: #007BFF;
-  border: 2px solid #007BFF;
+  color: #00c6e6;
+  border: 2px solid #00c6e6;
   background: transparent;
   z-index: 1;
   transition: color 0.3s ease;
@@ -140,7 +140,7 @@ body {
   left: 0;
   width: 1750%;
   height: 1750%;
-  background-color: #007BFF;
+  background-color: #00c6e6;
   border-radius: 50%;
   transform: translate(-90%, 90%) scale(1);
   transform-origin: bottom left;
@@ -211,4 +211,69 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.link-menu {
+  color: #bfc0d1;
+  transition: color 0.3s ease;
+}
+
+.link-menu:hover {
+  color: #00c6e6;
+  /* mesma cor da logo para harmonia */
+}
+
+.link-menu {
+  color: #bfc0d1;
+  font-size: 1rem;
+  /* ~16px */
+  padding: 0 1rem;
+  /* espaçamento lateral entre os links */
+  transition: color 0.3s ease;
+}
+
+.link-menu:hover {
+  color: #00c6e6;
+}
+
+.hero-banner {
+  background-image: url('assets/banner-hero.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .hero-banner {
+    background-attachment: scroll;
+    /* remove o parallax em mobile para evitar bugs */
+  }
+}
+
+.btn-comprar {
+  background-color: #00c6e6;
+  color: white;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.btn-comprar:hover {
+  background-color: #191e2b;
+}
+
+.btn-comprar {
+  background-color: #00c6e6;
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background 0.3s ease;
+}
+
+.btn-comprar:hover {
+  background-color: #191e2b;
 }
