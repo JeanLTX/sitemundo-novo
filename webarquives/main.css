@@ -277,3 +277,83 @@ body {
 .btn-comprar:hover {
   background-color: #191e2b;
 }
+
+.link-menu {
+  position: relative;
+  display: inline-block;
+  color: #bfc0d1;
+  font-size: 1rem;
+  padding: 0 1rem;
+  transition: color 0.3s ease;
+}
+
+.link-menu::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #00c6e6;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.link-menu:hover {
+  color: #00c6e6;
+}
+
+.link-menu:hover::after {
+  transform: scaleX(1);
+}
+
+.link-menu.active,
+.link-menu.active:hover {
+  color: #00c6e6;
+}
+
+.link-menu.active::after {
+  transform: scaleX(1);
+}
+
+/* Corrige cor de hover dos links no rodapé */
+footer a {
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #00c6e6 !important;
+}
+
+/* Estilo de cor para os ícones de formas de pagamento no rodapé */
+footer i.ri-visa-fill {
+  color: #00c6e6;
+  /* azul Visa */
+}
+
+footer i.ri-mastercard-fill {
+  color: #eb001b;
+  /* vermelho Mastercard */
+}
+
+footer i.ri-paypal-fill {
+  color: #00c6e6;
+  /* PayPal */
+}
+
+footer i.ri-bank-card-fill {
+  color: #00c6e6;
+}
+
+/* contact icon */
+footer i.ri-map-pin-line,
+footer i.ri-phone-line,
+footer i.ri-mail-line {
+  color: #00c6e6;
+}
+
+/* nome h1*/
+footer h1 {
+  color: #00c6e6;
+}
