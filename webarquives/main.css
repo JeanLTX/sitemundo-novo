@@ -95,6 +95,12 @@
 .product-container {
   flex-wrap: nowrap;
 }
+.product-container:hover .product-card:not(:hover) {
+  filter: blur(1.5px);
+  transform: scale(0.98);
+  opacity: 0.9;
+}
+
 
 /* Corrige largura dos cards para 4 por slide */
 .carousel-item {
