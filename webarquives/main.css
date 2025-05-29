@@ -95,6 +95,7 @@
 .product-container {
   flex-wrap: nowrap;
 }
+
 .product-container:hover .product-card:not(:hover) {
   filter: blur(1.5px);
   transform: scale(0.98);
@@ -362,4 +363,9 @@ footer i.ri-mail-line {
 /* nome h1*/
 footer h1 {
   color: #00c6e6;
+}
+
+#hero-banner .dot.active {
+  opacity: 1;
+  background-color: #00c6e6;
 }

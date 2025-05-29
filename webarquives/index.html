@@ -65,31 +65,51 @@
       <button id="menu-toggle" class="md:hidden text-2xl text-gray-700 hover:text-blue-500">
         <i class="ri-menu-line"></i>
       </button>
-      <nav class="hidden md:flex text-sm font-medium">
-        <a href="#" class="link-menu">Início</a>
-        <a href="#" class="link-menu">Produtos</a>
-        <a href="#" class="link-menu">Categorias</a>
-        <a href="#" class="link-menu">Contato</a>
+
+      <!-- Carrinho Mobile -->
+      <a href="#carrinho" class="flex md:hidden items-center relative ml-4">
+        <i class="ri-shopping-cart-2-line text-2xl text-white"></i>
+        <span id="cart-count-mobile-icon"
+          class="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">0</span>
+      </a>
+
+      <nav class="hidden md:flex items-center text-sm font-medium space-x-4">
+        <a href="#produtos" class="link-menu">Produtos</a>
+        <a href="#categorias" class="link-menu">Categorias</a>
+        <a href="#contato" class="link-menu">Contato</a>
+        <a href="#carrinho" class="relative link-menu flex items-center">
+          <i class="ri-shopping-cart-2-line text-xl"></i>
+          <span id="cart-count"
+            class="absolute -top-2 -right-3 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">0</span>
+        </a>
       </nav>
+
 
     </div>
 
     <!-- Menu Mobile -->
     <div id="mobile-menu"
       class="overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out md:hidden px-4">
-      <a href="#" class="block py-2 text-sm link-menu">Início</a>
-      <a href="#" class="block py-2 text-sm link-menu">Produtos</a>
-      <a href="#" class="block py-2 text-sm link-menu">Categorias</a>
-      <a href="#" class="block py-2 text-sm link-menu">Contato</a>
+      <a href="#produtos" class="block py-2 text-sm link-menu">Produtos</a>
+      <a href="#categorias" class="block py-2 text-sm link-menu">Categorias</a>
+      <a href="#contato" class="block py-2 text-sm link-menu">Contato</a>
+      <a href="#carrinho" class="block py-2 text-sm link-menu flex items-center">
+        <i class="ri-shopping-cart-2-line mr-1"></i> Carrinho
+        <span id="cart-count-mobile"
+          class="ml-1 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">0</span>
+      </a>
     </div>
+
   </header>
 
+
   <!-- Hero Section -->
-  <section class="hero-banner relative py-60 text-white">
-    <!-- Camada escura opcional -->
+  <section id="hero-banner"
+    class="hero-banner relative py-60 text-white bg-cover bg-center transition-all duration-700">
+    <!-- Camada escura -->
     <div class="absolute inset-0 bg-black bg-opacity-40 z-0"></div>
 
-    <!-- Conteúdo -->
+    <!-- Conteúdo fixo -->
     <div class="container mx-auto px-4 flex flex-col items-start text-left relative z-10">
       <h2 class="text-4xl font-bold mb-4">
         Bem-vindo à <span class="text-[#00c6e6]">Mundo Versátil</span>
@@ -102,7 +122,14 @@
         <button class="botao-hero"><span>Ofertas</span></button>
       </div>
     </div>
+
+    <!-- Indicadores -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+      <span class="dot w-3 h-3 rounded-full bg-white opacity-50"></span>
+      <span class="dot w-3 h-3 rounded-full bg-white opacity-50"></span>
+    </div>
   </section>
+
 
   <!-- Categorias em Destaque -->
   <section class="py-16 bg-[#f5f6fa]">
@@ -470,10 +497,10 @@
         <div>
           <h3 class="text-lg font-bold mb-4">Contato</h3>
           <ul class="space-y-2 text-gray-400">
-            <li class="flex items-start"><i class="ri-map-pin-line text-blue-500 mr-2"></i> Av. Paulista, 1000, São
-              Paulo - SP</li>
-            <li class="flex items-center"><i class="ri-phone-line text-blue-500 mr-2"></i> (11) 3456-7890</li>
-            <li class="flex items-center"><i class="ri-mail-line text-blue-500 mr-2"></i> contato@lojavirtual.com.br
+            <li class="flex items-start"><i class="ri-map-pin-line text-blue-500 mr-2"></i> Rua Clovis Scarabucci
+              Teixeira, 240</li>
+            <li class="flex items-center"><i class="ri-phone-line text-blue-500 mr-2"></i> (16) 99723-3469</li>
+            <li class="flex items-center"><i class="ri-mail-line text-blue-500 mr-2"></i> mundoversatil.15@gmail.com
             </li>
           </ul>
           <div class="mt-4">
@@ -630,6 +657,61 @@
       });
     });
   </script>
+
+  <script>
+    // Simulação do contador do carrinho
+    const cartCount = document.getElementById('cart-count');
+    const cartCountMobile = document.getElementById('cart-count-mobile');
+
+    let totalItems = 0; // aqui você pode usar uma variável dinâmica futuramente
+    const cartCountIcon = document.getElementById('cart-count-mobile-icon');
+    if (cartCountIcon) cartCountIcon.textContent = totalItems;
+
+
+    function updateCartCount() {
+      cartCount.textContent = totalItems;
+      if (cartCountMobile) cartCountMobile.textContent = totalItems;
+    }
+
+    updateCartCount();
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const banner = document.getElementById("hero-banner");
+      const dots = document.querySelectorAll("#hero-banner .dot");
+
+      const backgrounds = [
+        "url('assets/banner-hero.png')",
+        "url('assets/banner-hero-2.png')"
+      ];
+
+      let index = 0;
+
+      function updateBackground() {
+        banner.style.backgroundImage = backgrounds[index];
+        dots.forEach(dot => dot.classList.remove("active"));
+        dots[index].classList.add("active");
+      }
+
+      // Clique nos indicadores
+      dots.forEach((dot, i) => {
+        dot.addEventListener("click", () => {
+          index = i;
+          updateBackground();
+        });
+      });
+
+      setInterval(() => {
+        index = (index + 1) % backgrounds.length;
+        updateBackground();
+      }, 10000); //tempo de troca de imagem //
+
+      updateBackground();
+    });
+  </script>
+
+
 
 
 </body>
